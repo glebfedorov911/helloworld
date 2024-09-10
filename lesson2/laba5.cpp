@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// Федоров Глеб ФВТ 24ВП1 Лаба 5
+
 bool is_persent_good(int A[], int B[], int size) {
     int k = 0;
     for (int i = 0; i < size; i++) {
