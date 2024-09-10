@@ -24,7 +24,7 @@ bool is_persent_good(int A[], int B[], int size) {
 int main() {
     const int N = 10;
     int A[N] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int B[N] {5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+    int B[N] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     bool F = is_persent_good(A, B, N);
     cout << F;
