@@ -46,6 +46,8 @@ int main() {
             break; 
         }
     }
-    if (!only_negative) cout << F;
-    else cout << "Все суммы матрицы А - отрицательны!";
+    cout << "Исходные данные" << endl;
+    cout << N << " " << A << " " << B << endl;
+    if (!only_negative) cout << F << endl;
+    else cout << "Все суммы матрицы А - отрицательны!" << endl;
 }

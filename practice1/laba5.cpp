@@ -25,7 +25,9 @@ int main() {
     const int N = 10;
     int A[N] {1, 2, 0, 0, 0, 0, 0, 0, 0, 0};
     int B[N] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
+    
+    cout << "Исходные данные" << endl;
+    cout << N << " " << A << " " << B << endl;
     bool F = is_persent_good(A, B, N);
-    cout << F;
+    cout << F << endl;
 }
