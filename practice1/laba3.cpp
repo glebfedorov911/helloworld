@@ -30,6 +30,13 @@ int main() {
     int A[N] {1, 2, 0, 0, 0, 0, 0, 0, 0, 0};
     int B[N] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     
+    cout << "Исходные данные" << endl;
+    cout << "A:" << endl;
+    for (auto i : A) {
+        cout << i << " ";
+    }
+    cout << endl;
+
     int min = 100000000, imin;
     for (int i = 0; i < N; i++) {
         if (A[i] < min) {
@@ -37,8 +44,7 @@ int main() {
             imin = i;
         }
     }
-    cout << "Исходные данные: " << A << endl;
-    cout << min << " " << imin << endl;
+    cout << "min: " << min << " imin: " << imin << endl;
 
     int max = -100000000, imax;
     for (int i = 0; i < N; i++) {
@@ -47,15 +53,15 @@ int main() {
             imax = i;
         }
     }
-    cout << max << " " << imax << endl;
+    cout << "max: " << max << " imax: " << imax << endl;
 
     int sum = 0;
     for (int i : A) sum += i;
-    cout << sum << endl;
+    cout << "sum: " << sum << endl;
 
     int multi = 1;
-    for (int i : A) sum *= i;
-    cout << sum << endl;
+    for (int i : A) multi *= i;
+    cout << "multi: " << multi << endl;
 
     bool f1 = false;
     for (int i: A) {
@@ -64,7 +70,7 @@ int main() {
             break;
         }
     }
-    cout << f1 << endl;
+    cout << "f1: " << f1 << endl;
 
     bool f2 = true;
     for (int i: A) {
@@ -73,10 +79,20 @@ int main() {
             break;
         }
     }
-    cout << f2 << endl;
+    cout << "f2: " << f2 << endl;
 
     cout << "Исходные данные" << endl;
-    cout << N << " " << A << " " << B << endl;
+    cout << "A:" << endl;
+    for (auto i : A) {
+        cout << i << " ";
+    }
+    cout << endl;
+    cout << "B:" << endl;
+    for (auto i : B) {
+        cout << i << " ";
+    }
+    cout << endl;
+    cout << "N: " << N << endl;
     bool F = is_persent_good(A, B, N);
-    cout << F << endl;
+    cout << "F: " << F << endl;
 }
