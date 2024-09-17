@@ -18,9 +18,7 @@ bool is_persent_good(int A[], int B[], int size) {
             }
         }
         int percent_same = ((double) k/(double) size) * 100;
-        if (percent_same >= 30) {
-            return true;
-        }
+        if (percent_same >= 30) return true;
     }
     return false;
 }
