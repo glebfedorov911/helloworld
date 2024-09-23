@@ -1,6 +1,5 @@
 #include <iostream>
-
-using namespace std;
+#include <algorithm>
 
 // Федоров Глеб ФВТ 24ВП1 Лаба 3
 // Даны массивы А, В, состоящие из N элементов каждый.
@@ -8,38 +7,24 @@ using namespace std;
 // элементов массива А встречается в массиве В,
 // и false в противном случае.
 
+using std::cout;
+using std::endl;
+using std::count_if;
+using std::find;
 
-int main() {
-    const int N = 10;
-    int A[N] {1, 2, 0, 0, 0, 0, 0, 0, 0, 0};
-    int B[N] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+int main()
+{
+    int N = 10;
+    int A[] = {0, 0, 0, 0, 0, 1, 0, 0, 10};
+    int B[] = {8, 1, 6, 5, 2, 7, 9, 3, 4, 10};
 
-    auto f { [](int A[], int B[], int size) {
-        int k = 0;
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                if (A[i] == B[j]) {
-                    k++;
-                    break;
-                }
-            }
-            int percent_same = ((double (k)/double (size)) * 100);
-            if (percent_same >= 30) return true;
-        }
-        return false;
-        } }; 
+    auto F = [&A, &B, N]() {
+        int k = count_if(A, A+N, [&B, N](int num) {
+            return find(B, B+N, num) != (B+N);
+        });
+        int percent = (double) k / double(N) * 100; 
+        return percent >= 30;
+    }();
 
-    cout << "Исходные данные" << endl;
-    cout << "A:" << endl;
-    for (auto i : A) {
-        cout << i << " ";
-    }
-    cout << endl;
-    cout << "B:" << endl;
-    for (auto i : B) {
-        cout << i << " ";
-    }
-    cout << endl;
-    cout << "N: " << N << endl;
-    cout << "F: " << f(A, B, N) << endl;
+    cout << "F: " << F; 
 }
