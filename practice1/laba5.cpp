@@ -24,7 +24,7 @@ int main()
         });
         int percent = (double) k / double(N) * 100;
         return percent >= 30;
-    }();
+    }();     
 
     cout << "F: " << F; 
 }
