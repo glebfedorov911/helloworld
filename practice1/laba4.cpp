@@ -17,7 +17,6 @@ int summa(int size, int A[]) {
     }
     return summa;
 }
-
 int main() {
     int N = 5;
     bool F = false;
