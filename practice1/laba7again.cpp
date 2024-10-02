@@ -87,7 +87,6 @@ int smallest_word_length(string* subStr, int len)
 	{						
 		if (!subStr[i].empty() && subStr[i] != " ") {
 			k = subStr[i].size() < k ? subStr[i].size() : k;
-			bool ddasd = subStr[i] == " ";
 		}
 	}
 	return k;
