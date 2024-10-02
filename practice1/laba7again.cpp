@@ -12,8 +12,9 @@ bool check_word(string* s1, string* s2, int sizeS1, int sizeS2, int smallest_len
 
 int main()
 {
-	string s1{ " adsdsaads asdasdasd asdasddas adb   a  " };
-	string s2{ "dasdsa adsasddsaasddas adb     " };
+	string s1{ "Hello world" };	 // 0
+	// string s1{ "Hello Gleb" };	 // 1
+	string s2{ "Hello my Teacher" };
 	int length1 = s1.size();
 	int length2 = s2.size();
 	int cnt1 = count_of_finding_word(s1, length1);
@@ -68,8 +69,7 @@ string* sub_words(string& str, int cnt)
 
 	for (int i = 0; i < cnt; i++)
 	{
-		int start = str[0] == ' ' ? 1 : 0;
-		if (start == 1) str = str.substr(start);
+		if(str[0] == ' ') str = str.substr(1);
 
 		tempStr = str.substr(0, str.find(delimiter));
 		if (!tempStr.empty()) stringArray[i] = tempStr;
