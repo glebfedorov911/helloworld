@@ -1,5 +1,3 @@
-string.cpp
-
 #include <iostream>
 
 using std::cout;
