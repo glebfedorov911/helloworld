@@ -5,16 +5,24 @@ using std::endl;
 using std::string;
 
 int count_of_finding_word(string& str, int len);
-int count_delimiter(string& str, char delimiter);
 string* sub_words(string& str, int cnt);
 int smallest_word_length(string* subStr, int length);
 bool check_word(string* s1, string* s2, int sizeS1, int sizeS2, int smallest_len);
+string delete_spaces(string s);
+
+/* 
+Федоров 24ВП1
+Присвоить переменной F значение true, если в предложении S2 есть хотя бы одно слово предложения S1 
+и длина которого превышает длину самого короткого слова S1, в противном случае присвоить переменной F - false
+*/
 
 int main()
 {
 	string s1{ "Hello world" };	 // 0
 	// string s1{ "Hello Gleb" };	 // 1
-	string s2{ "Hello my Teacher!" };
+	string s2{ "Hello Teacher" };
+	s1 = delete_spaces(s1);
+	s2 = delete_spaces(s2);
 	int length1 = s1.size();
 	int length2 = s2.size();
 	int cnt1 = count_of_finding_word(s1, length1);
@@ -32,32 +40,49 @@ int main()
 	return 0;
 }
 
-int count_delimiter(string& str, char delimiter)
+string delete_spaces(string s)
 {
-	int cnt = 0;
-	for (int i = 0; i < str.size(); i++)
+	string result;
+	bool inWord = false;
+
+	for (int i = 0; i < s.size(); i++)
 	{
-		if (str[i] == delimiter) cnt++;
+		if (s[i] != ' ')
+		{
+			result += s[i];
+			inWord = true;
+		}
+		else if (inWord)
+		{
+			result += ' ';
+			inWord = false;
+		}
 	}
-	return cnt;
+
+	if (!result.empty() && result.back() == ' ') result.pop_back();
+
+	return result;
 }
 
 int count_of_finding_word(string& str, int len)
 {
 	if (len == 0) return 0;
 
-	int cnt = (str[0] == ' ' || str[len - 1] == ' ') ? count_delimiter(str, ' ') : count_delimiter(str, ' ') + 1;
+	int cnt = 0;
+	bool inWord = false;
 
-	int doubleSpace = 0;
-	int pos = 0;
-
-	while ((pos = str.find("  ", pos)) != string::npos)
+	for (int i = 0; i < len; i++)
 	{
-		doubleSpace++;
-		pos += 2;
+		if (str[i] != ' ')
+		{
+			if (!inWord)
+			{
+				inWord = true;
+				cnt++;
+			}
+		}
+		else inWord = false;
 	}
-
-	cnt -= doubleSpace;
 	return cnt;
 }
 
@@ -69,8 +94,6 @@ string* sub_words(string& str, int cnt)
 
 	for (int i = 0; i < cnt; i++)
 	{
-		if(str[0] == ' ') str = str.substr(1);
-
 		tempStr = str.substr(0, str.find(delimiter));
 		if (!tempStr.empty()) stringArray[i] = tempStr;
 		else stringArray[i] = str;
@@ -84,7 +107,7 @@ int smallest_word_length(string* subStr, int len)
 {
 	int k = subStr[0].size();
 	for (int i = 1; i < len; i++)
-	{						
+	{
 		if (!subStr[i].empty() && subStr[i] != " ") {
 			k = subStr[i].size() < k ? subStr[i].size() : k;
 		}
