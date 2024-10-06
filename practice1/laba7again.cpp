@@ -14,7 +14,7 @@ int main()
 {
 	string s1{ "Hello world" };	 // 0
 	// string s1{ "Hello Gleb" };	 // 1
-	string s2{ "Hello my Teacher" };
+	string s2{ "Hello my Teacher!" };
 	int length1 = s1.size();
 	int length2 = s2.size();
 	int cnt1 = count_of_finding_word(s1, length1);
