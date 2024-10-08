@@ -20,8 +20,9 @@ const char* delete_spaces(const char* s);
 */
 
 int main() {
-    const char* s1{ "Hello my World" }; // 1
-    // const char* s1{ "Hello World" }; // 0
+    setlocale(LC_ALL, "RU");
+    // const char* s1{ "Hello my World" }; // 1
+    const char* s1{ "Hello World" }; // 0
     const char* s2{ "Hello Teacher" };
     s1 = delete_spaces(s1);
     s2 = delete_spaces(s2);
@@ -39,12 +40,12 @@ int main() {
 
     bool f = check_word(stringArray1, stringArray2, cnt1, cnt2, smallestWordS1);
 
-    cout << "Исходные данные:" << endl;
-    cout << "s1: ";
-    while(*s1) cout << *s1++;
-    cout << endl;
-    cout << "s2: ";
-    while(*s2) cout << *s2++;
+    // cout << "Исходные данные:" << endl;
+    // cout << "s1: ";
+    // while(*s1) cout << *s1++;
+    // cout << endl;
+    // cout << "s2: ";
+    // while(*s2) cout << *s2++;
     cout << endl;
 
     cout << "Выходные данные:" << endl;
@@ -142,7 +143,7 @@ int smallest_word_length(const char** subStr, int len) {
 bool check_word(const char** s1, const char** s2, int sizeS1, int sizeS2, int smallest_len) {
     for (int i = 0; i < sizeS1; i++) {
         for (int j = 0; j < sizeS2; j++) {
-            if (*s1[i] == *s2[j] && strlen(s2[j]) > smallest_len) {
+            if (strcmp(s1[i], s2[j]) == 0 && strlen(s2[j]) > smallest_len) {
                 return true;
             }
         }
