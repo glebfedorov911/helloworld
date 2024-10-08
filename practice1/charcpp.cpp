@@ -6,6 +6,7 @@
 using std::cout;
 using std::endl;
 using std::strlen;
+using std::strcmp;
 
 int count_of_finding_word(const char* str, int len);
 const char** sub_words(const char* str, int cnt);
