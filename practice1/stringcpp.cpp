@@ -18,8 +18,8 @@ string delete_spaces(string s);
 
 int main()
 {
-  string s1{ "Hello world" };   // 0
-  // string s1{ "Hello Gleb" };   // 1
+  // string s1{ "Hello world" };   // 0
+  string s1{ "Hello my World" };   // 1
   string s2{ "Hello Teacher" };
 
   cout << "Исходные данные:" << endl;
