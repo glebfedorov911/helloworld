@@ -21,6 +21,11 @@ int main()
   string s1{ "Hello world" };   // 0
   // string s1{ "Hello Gleb" };   // 1
   string s2{ "Hello Teacher" };
+
+  cout << "Исходные данные:" << endl;
+  cout << "s1: " << s1 << endl;
+  cout << "s2: " << s2 << endl;
+
   s1 = delete_spaces(s1);
   s2 = delete_spaces(s2);
   int length1 = s1.size();
@@ -35,6 +40,7 @@ int main()
 
   bool f = check_word(stringArray1, stringArray2, cnt1, cnt2, smallestWordS1);
 
+  cout << "Выходные данные:" << endl;
   cout << "F: " << f;
 
   return 0;

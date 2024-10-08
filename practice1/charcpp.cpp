@@ -20,7 +20,8 @@ const char* delete_spaces(const char* s);
 */
 
 int main() {
-    const char* s1{ "Hello World" };
+    const char* s1{ "Hello my World" }; // 1
+    // const char* s1{ "Hello World" }; // 0
     const char* s2{ "Hello Teacher" };
     s1 = delete_spaces(s1);
     s2 = delete_spaces(s2);
@@ -38,6 +39,15 @@ int main() {
 
     bool f = check_word(stringArray1, stringArray2, cnt1, cnt2, smallestWordS1);
 
+    cout << "Исходные данные:" << endl;
+    cout << "s1: ";
+    while(*s1) cout << *s1++;
+    cout << endl;
+    cout << "s2: ";
+    while(*s2) cout << *s2++;
+    cout << endl;
+
+    cout << "Выходные данные:" << endl;
     cout << "F: " << f;
 
     return 0;
