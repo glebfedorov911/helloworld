@@ -41,12 +41,12 @@ int main() {
 
     bool f = check_word(stringArray1, stringArray2, cnt1, cnt2, smallestWordS1);
 
-    // cout << "Исходные данные:" << endl;
-    // cout << "s1: ";
-    // while(*s1) cout << *s1++;
-    // cout << endl;
-    // cout << "s2: ";
-    // while(*s2) cout << *s2++;
+    cout << "Исходные данные:" << endl;
+    cout << "s1: ";
+    while(*s1) cout << *s1++;
+    cout << endl;
+    cout << "s2: ";
+    while(*s2) cout << *s2++;
     cout << endl;
 
     cout << "Выходные данные:" << endl;
